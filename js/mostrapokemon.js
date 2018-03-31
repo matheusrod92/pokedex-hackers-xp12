@@ -83,7 +83,7 @@ function populaModal(pokemon) {
   colContent.appendChild(pokeTypesList);
 
   const pokeHeight = document.createElement('p');
-  pokeHeight.innerText = `${pokemon.height}`;
+  pokeHeight.innerText = pokemon.height;
   pokeHeight.style.marginBottom = '5px';
   
   const heightTitle = document.createElement('strong');
@@ -92,7 +92,7 @@ function populaModal(pokemon) {
   colContent.appendChild(pokeHeight);
 
   const pokeWeight = document.createElement('p');
-  pokeWeight.innerText = `Peso: ${pokemon.weight}`;
+  pokeWeight.innerText = pokemon.weight;
   pokeWeight.style.marginBottom = '5px';
   
   const weightTitle = document.createElement('strong');
@@ -101,7 +101,7 @@ function populaModal(pokemon) {
   colContent.appendChild(pokeWeight);
 
   const pokeId = document.createElement('p');
-  pokeId.innerText = `ID: ${pokemon.id}`;
+  pokeId.innerText = pokemon.id;
   pokeId.style.marginBottom = '5px';
   
   const idTitle = document.createElement('strong');
