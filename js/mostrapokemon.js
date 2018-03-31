@@ -5,6 +5,7 @@ function mostraPokemon(url) {
   //  3. CHAMAR FUNÇÃO POPULA MODAL PARA ELA ADICIONAR
   //     OS COMPONENTES HTML NO MODAL
   //  4. ABRIR MODAL (.modal) COM JAVASCRIPT
+  //     (http://getbootstrap.com/docs/4.0/components/modal/#via-javascript)
 }
 
 
