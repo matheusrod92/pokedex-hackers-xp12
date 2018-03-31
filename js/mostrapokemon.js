@@ -59,7 +59,7 @@ function populaModal(pokemon) {
   row.classList.add('row');
 
   const colImg = document.createElement('div');
-  colImg.classList.add('col-4');
+  colImg.classList.add('col-4', 'text-center');
   colImg.style.alignSelf = 'center';
 
   const colContent = document.createElement('div');
@@ -67,12 +67,11 @@ function populaModal(pokemon) {
 
   const pokeName = document.createElement('h1');
   pokeName.innerText = pokemon.name;
-  pokeName.classList.add('text-center');
   colContent.appendChild(pokeName);
 
   const pokeImg = document.createElement('img');
   pokeImg.src = pokemon.sprites.front_default;
-  pokeImg.classList.add('img-fluid', 'text-center');
+  pokeImg.classList.add('img-fluid');
   colImg.appendChild(pokeImg);
 
   const pokeTypesList = document.createElement('ul');
