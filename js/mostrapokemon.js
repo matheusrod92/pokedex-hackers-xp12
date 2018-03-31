@@ -55,14 +55,25 @@ function populaModal(pokemon) {
   body.classList.add('modal-body');
   content.appendChild(body);
 
+  const row = document.createElement('div');
+  row.classList.add('row');
+
+  const colImg = document.createElement('div');
+  colImg.classList.add('col-4');
+  colImg.style.alignSelf = 'center';
+
+  const colContent = document.createElement('div');
+  colContent.classList.add('col-8');
+
+  const pokeName = document.createElement('h1');
+  pokeName.innerText = pokemon.name;
+  pokeName.classList.add('text-center');
+  colContent.appendChild(pokeName);
+
   const pokeImg = document.createElement('img');
   pokeImg.src = pokemon.sprites.front_default;
-  pokeImg.classList.add('img-fluid');
-  body.appendChild(pokeImg);
-
-  const pokeName = document.createElement('strong');
-  pokeName.innerText = pokemon.name;
-  body.appendChild(pokeName);
+  pokeImg.classList.add('img-fluid', 'text-center');
+  colImg.appendChild(pokeImg);
 
   const pokeTypesList = document.createElement('ul');
   pokemon.types.map(type => {
@@ -70,20 +81,38 @@ function populaModal(pokemon) {
     pokeType.innerText = type.type.name;
     pokeTypesList.appendChild(pokeType);
   });
-  body.appendChild(pokeTypesList);
+  colContent.appendChild(pokeTypesList);
 
   const pokeHeight = document.createElement('p');
-  pokeHeight.innerText = `Altura: ${pokemon.height}`;
-  body.appendChild(pokeHeight);
+  pokeHeight.innerText = `${pokemon.height}`;
+  pokeHeight.style.marginBottom = '5px';
+  
+  const heightTitle = document.createElement('strong');
+  heightTitle.innerText = 'Altura: ';
+  pokeHeight.prepend(heightTitle);
+  colContent.appendChild(pokeHeight);
 
   const pokeWeight = document.createElement('p');
   pokeWeight.innerText = `Peso: ${pokemon.weight}`;
-  body.appendChild(pokeWeight);
+  pokeWeight.style.marginBottom = '5px';
+  
+  const weightTitle = document.createElement('strong');
+  weightTitle.innerText = 'Peso: ';
+  pokeWeight.prepend(weightTitle);
+  colContent.appendChild(pokeWeight);
 
   const pokeId = document.createElement('p');
   pokeId.innerText = `ID: ${pokemon.id}`;
-  body.appendChild(pokeId);
+  pokeId.style.marginBottom = '5px';
+  
+  const idTitle = document.createElement('strong');
+  idTitle.innerText = 'ID: ';
+  pokeId.prepend(idTitle);
+  colContent.appendChild(pokeId);
 
+  row.appendChild(colImg);
+  row.appendChild(colContent);
+  body.appendChild(row);
   dialog.appendChild(content);
   modal.appendChild(dialog);
 }
