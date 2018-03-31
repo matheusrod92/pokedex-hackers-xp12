@@ -2,7 +2,7 @@
   //API: https://pokeapi.co/docsv2
   //define link de consumo à api
   //TO-DO: ADICIONAR LINK DA API PARA LISTAR POKEMONS
-  const URL = '';
+  const URL = 'https://pokeapi.co/api/v2/pokemon';
   //instancia classe responsável ao consumo da api
   const xhr = new XMLHttpRequest();
   //define opções da requisição
@@ -38,7 +38,7 @@
         // PARAMETRO O LINK OBTIDO PARA CADA POKEMON
 
 
-
+        mostraPokemon(pokemon.url);
 
 
       });
@@ -53,7 +53,7 @@
       cardTitle.classList.add('card-title');
       //TO-DO: ADICIONE AQUI O NOME DOS POKEMONS
 
-
+      cardTitle.innerText = pokemon.name;
 
 
       cardBody.appendChild(cardTitle);
